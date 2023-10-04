@@ -1,6 +1,6 @@
 class ScreenRegion:
     def __init__(self):
-        self.colorStep = 5
+        self.colorStep = 8
         self.curColor = None
         self.goalColor = None
         self.xMin = None

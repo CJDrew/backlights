@@ -6,7 +6,7 @@ from scipy import product
 from frameUtilities import processFrame
 import screenRegion
 
-frameSkip = 2
+frameSkip = 3
 frameCount = -1
 
 led_channelsX = 100

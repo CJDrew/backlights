@@ -16,9 +16,13 @@ def processArea(area):
 
 def processFrame(frame, led_channelsX, led_channelsY):
     #Rescale the image to save processing
-    scale_percent = 10
+    scale_percent = 10 if len(frame) < 2000 else 5
     width = int(frame.shape[1] * scale_percent / 100)
     height = int(frame.shape[0] * scale_percent / 100)
+
+    #Make the size a multiple of our LED channels to make life easier
+    width -= (width % led_channelsX)
+    height -= (height % led_channelsY)
     dim = (width, height)
     frame = cv2.resize(frame, dim, cv2.INTER_AREA)
 
